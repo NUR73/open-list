@@ -20,7 +20,7 @@
                         <td><c:out value="${user.id}" /></td>
                         <td><c:out value="${user.name}" /></td>
                         <td>
-                            <a href="<c:url value='/employees/show?id=${employee.id}' />">詳細を表示</a>
+                            <a href="<c:url value='/users/show?id=${user.id}' />">詳細を表示</a>
                         </td>
                     </tr>
                 </c:forEach>

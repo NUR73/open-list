@@ -129,3 +129,17 @@ select {
 h1 a {
     color: #eeeeee;
 }
+
+table#restaurant_list th {
+    font-weight: bold;
+    padding: 10px 2%;
+}
+
+table#restaurant_list .restaurant_name {
+    width: 20%;
+    padding: 10px 2%;
+}
+
+table#restaurant_list .restaurant_action {
+    width: 13%;
+}

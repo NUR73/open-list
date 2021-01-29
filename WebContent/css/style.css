@@ -143,3 +143,7 @@ table#restaurant_list .restaurant_name {
 table#restaurant_list .restaurant_action {
     width: 13%;
 }
+
+pre {
+    font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+}

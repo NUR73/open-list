@@ -24,6 +24,14 @@ import javax.persistence.Table;
         name = "getRestaurantsCount",
         query = "SELECT COUNT(r) FROM Restaurant AS r"
     ),
+    @NamedQuery(
+            name = "getMyAllRestaurants",
+            query = "SELECT r FROM Restaurant AS r WHERE r.user = :user ORDER BY r.id DESC"
+    ),
+    @NamedQuery(
+            name = "getMyRestaurantsCount",
+            query = "SELECT COUNT(r) FROM Restaurant AS r WHERE r.user = :user"
+        )
 })
 @Entity
 public class Restaurant {

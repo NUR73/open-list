@@ -17,7 +17,7 @@
                 </tr>
                 <c:forEach var="restaurant" items="${restaurants}" varStatus="status">
                     <tr class="row${status.count % 2}">
-                        <td class="restaurant_name"><c:out value="${restaurant.user.name}" /></td>
+                        <td class="restaurant_name"><c:out value="${restaurant.name}" /></td>
                         <td class="restaurant_action"><a href="<c:url value='/restaurants/show?id=${restaurant.id}' />">詳細を見る</a></td>
                     </tr>
                 </c:forEach>

@@ -29,7 +29,7 @@ public class UserValidator {
     private static String validateName(String name, Boolean nameDuplicateCheckFlag) {
         // 必須入力チェック
         if(name == null || name.equals("")) {
-            return "社員番号を入力してください。";
+            return "名前を入力してください。";
         }
 
         // すでに登録されている名前との重複チェック

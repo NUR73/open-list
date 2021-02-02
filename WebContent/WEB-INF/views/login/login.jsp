@@ -25,5 +25,11 @@
             <input type="hidden" name="_token" value="${_token}" />
             <button type="submit">ログイン</button>
         </form>
+
+                <h2>ユーザー　新規登録</h2>
+
+        <form method="POST" action="<c:url value='/users/create' />">
+            <c:import url="../users/_form.jsp" />
+        </form>
     </c:param>
 </c:import>

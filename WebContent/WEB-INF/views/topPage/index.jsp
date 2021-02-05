@@ -16,17 +16,17 @@
                     <th class="restaurant_name">名</th>
                     <th class="restaurant_action">操作</th>
                 </tr>
-                <c:forEach var="restaurant" items="${restaurants}" varStatus="status">
+                <c:forEach var="usersrestaurant" items="${usersrestaurants}" varStatus="status">
                     <tr class="row${status.count % 2}">
-                        <td class="restaurant_name"><c:out value="${restaurant.name}" /></td>
-                        <td class="restaurant_action"><a href="<c:url value='/restaurants/show?id=${restaurant.id}' />">詳細を見る</a></td>
+                        <td class="restaurant_name"><c:out value="${usersrestaurant.restaurant.name}" /></td>
+                        <td class="restaurant_action"><a href="<c:url value='/restaurants/show?id=${usersrestaurant.restaurant.id}' />">詳細を見る</a></td>
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
 
         <div id="pagination">
-            （全 ${reports_count} 件）<br />
+            （全 ${restaurants_count} 件）<br />
             <c:forEach var="i" begin="1" end="${((restaurants_count - 1) / 15) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">

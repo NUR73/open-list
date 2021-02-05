@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import models.Restaurant;
 import models.User;
+import models.UsersRestaurant;
 import models.validators.RestaurantValidator;
 import utils.DBUtil;
 
@@ -63,6 +64,12 @@ public class RestaurantsCreateServlet extends HttpServlet {
             } else {
                 em.getTransaction().begin();
                 em.persist(r);
+
+                UsersRestaurant ur = new UsersRestaurant();
+                ur.setUser((User)request.getSession().getAttribute("login_user"));
+                ur.setRestaurant(r);
+                em.persist(ur);
+
                 em.getTransaction().commit();
                 em.close();
                 request.getSession().setAttribute("flush", "登録が完了しました。");

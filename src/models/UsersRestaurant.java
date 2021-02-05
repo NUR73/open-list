@@ -20,7 +20,7 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "getMyUsersRestaurantsCount",
             query = "SELECT COUNT(ur) FROM UsersRestaurant AS ur WHERE ur.user = :user"
-        )
+    )
 })
 @Entity
 public class UsersRestaurant {

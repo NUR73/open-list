@@ -6,7 +6,11 @@
         <c:choose>
             <c:when test="${restaurant != null}">
                 <h2>店舗　詳細ページ</h2>
-
+                <c:if test="${flush != null}">
+                    <div id="flush_success">
+                        <c:out value="${flush}"></c:out>
+                    </div>
+                </c:if>
                 <table>
                     <tbody>
                         <tr>
@@ -33,6 +37,10 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <form method="POST" action="<c:url value='/usersrestaurants/create?id=${restaurant.id}' />">
+                    <button type="submit">お気に入り</button>
+                </form>
 
                 <c:if test="${sessionScope.login_user.id == restaurant.user.id}">
                     <p><a href="<c:url value="/restaurants/edit?id=${restaurant.id}" />">この店舗を編集する</a></p>

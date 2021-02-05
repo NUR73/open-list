@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Restaurant;
 import models.User;
+import models.UsersRestaurant;
 import utils.DBUtil;
 /**
  * Servlet implementation class TopPageIndexServlet
@@ -42,19 +42,19 @@ public class TopPageIndexServlet extends HttpServlet {
         } catch(Exception e) {
             page = 1;
         }
-        List<Restaurant> restaurants = em.createNamedQuery("getMyAllRestaurants", Restaurant.class)
+        List<UsersRestaurant> usersrestaurants = em.createNamedQuery("getMyAllUsersRestaurants", UsersRestaurant.class)
                                   .setParameter("user", login_user)
                                   .setFirstResult(15 * (page - 1))
                                   .setMaxResults(15)
                                   .getResultList();
 
-        long restaurants_count = (long)em.createNamedQuery("getMyRestaurantsCount", Long.class)
+        long restaurants_count = (long)em.createNamedQuery("getMyUsersRestaurantsCount", Long.class)
                                      .setParameter("user", login_user)
                                      .getSingleResult();
 
         em.close();
 
-        request.setAttribute("restaurants", restaurants);
+        request.setAttribute("usersrestaurants", usersrestaurants);
         request.setAttribute("restaurants_count", restaurants_count);
         request.setAttribute("page", page);
 
